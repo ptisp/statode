@@ -45,10 +45,10 @@ function getStatus(cb) {
         var date;
         for (var y = evs.length-1; y >= 0; y--) {
           if(evs[y].status == 'DOWN') {
-            date = new Date(evs[y].created_at).getTime();
+            date = new Date(parseInt(evs[y].created_at)).getTime();
           } else if(date !== undefined) {
             if(evs[y].status == 'UP') {
-              var date2 = new Date(evs[y].created_at).getTime();
+              var date2 = new Date(parseInt(evs[y].created_at)).getTime();
               output[config.services[i]].offline += (date2 - date);
             }
             date = undefined;

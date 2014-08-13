@@ -73,7 +73,7 @@ function getEvents(cb) {
     for (var i = 0; i < config.services.length; i++) {
       var ress = results[i];
       for (var y = 0; y < ress.length; y++) {
-        ress[y].created_at = parseInt(ress[y].created_at.trim());
+        ress[y].created_at = parseInt(ress[y].created_at);
       }
 
 

@@ -71,6 +71,7 @@ function getEvents(cb) {
   }, function(err, results) {
     var output = {};
     for (var i = 0; i < config.services.length; i++) {
+      results[i].created_at = parseInt(results[i].created_at.trim());
       output[config.services[i].toUpperCase()] = results[i];
     }
     cb(output);
